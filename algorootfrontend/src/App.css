@@ -1,38 +1,147 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-height: 100vh;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  font-family: Arial, sans-serif;
+  flex-direction: column;
+}
+
+/* Wrapper to keep everything in the center */
+.wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 90%;
+  max-width: 600px;
 }
 
-.App-link {
-  color: #61dafb;
+/* Glassmorphic Effect for Container */
+.container {
+  text-align: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+h1 {
+  color: #fff;
+}
+
+/* Task Form */
+.task-form input {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.3);
+  color: #fff;
+  outline: none;
+}
+
+.task-form button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background: #ff8c00;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.task-form button:hover {
+  background: #ff6f00;
+}
+
+/* New Scrollable Task Container */
+.task-container {
+  margin-top: 20px;
+  width: 100%;
+  max-height: 400px;
+  overflow-y: auto;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  scrollbar-width: thin;
+  scrollbar-color: #ff8c00 #ffffff10;
+}
+
+/* Custom Scrollbar for Chrome, Edge, Safari */
+.task-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.task-container::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.task-container::-webkit-scrollbar-thumb {
+  background: #ff8c00;
+  border-radius: 10px;
+}
+
+/* Task Cards */
+.task-card {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 10px;
+  color: #fff;
+  backdrop-filter: blur(10px);
+  width: 90%;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.task-card:hover {
+  transform: scale(1.05);
+}
+
+.task-card button {
+  margin: 5px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.task-card button:first-child {
+  background: #4caf50;
+  color: #fff;
+}
+
+.task-card button:last-child {
+  background: #e74c3c;
+  color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+  .wrapper {
+    width: 95%;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .task-container {
+    max-height: 300px;
   }
 }
+
+
+/* Adding tilt Effects for better ui scrolling */
+/* Task Cards */
